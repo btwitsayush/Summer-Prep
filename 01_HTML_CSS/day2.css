@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+div{
+    background-color: aqua;
+    width: fit-content;
+    margin: autok;
+    }
+    
+ p{
+   
+    background-color: antiquewhite;
+}
+
+.btn{
+    display: block;
+    margin: 10px;
+    background-color: aquamarine;
+   width: fit-content;
+    border: none;
+    color: black;
+    font-size: 18px;
+    padding: 0.3em 0.5em;
+    border-radius: 0.5em;
+}
+.big{
+    font-size: 16px;
+}
+.small{
+    font-size: 10px;
+}
+
+ol+li+li+li>h3 {
+    color: blue;
+}

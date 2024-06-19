@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+
+body{
+    background-color: black;
+    color: white;
+}
+li::first-letter{
+    color: orangered;
+}
+
+li:last-of-type{
+    color: orange;
+}
+
+li:nth-of-type(2){
+    color: blueviolet;
+}
+li:nth-child(2){
+    color: antiquewhite;
+}
+
+
+p:first-child{
+    color: blue;
+    }
+
+p:nth-child(even){
+    color: green;
+}
+
+/* p:nth-child(6){
+    color: green;
+} */
+
+p:last-child{
+    color: green;
+}
+
+</style>
+<body>
+    
+    <ul>
+        <p>start</p>
+        <li>Mango</li>
+        <li>Banana</li>
+        <li>Kivi</li>
+        <p>This is fruits list</p>
+        <p>Hiii</p>
+        <li>Apple</li>
+        <p>End</p>
+    </ul>
+</body>
+</html>

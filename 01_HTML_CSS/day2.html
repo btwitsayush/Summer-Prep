@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="day2.css">
+</head>
+<body>
+    
+    <!-- novalidate attribute is used to bypass keyword  required it will allow to submit the form even when the required field is not field  -->
+  
+    <form action="" novalidate>
+        <fieldset>
+            <legend>Form</legend>
+        <!-- name attribute in input tag is for key value pair which will be visible in url in form of query params -->
+        <label for="user-name">UserName:</label>
+        <input type="text" placeholder="Enter you name" name="user-name"  required><br><br>
+
+
+        <!-- value attribute in input tag is used to set a default value  -->
+         <!-- attribute autocomplete is used to stop suggestion whenever we tryto input data in box -->
+         <label for="user-age">User Age:</label>
+        <input type="text"  value="18" name="user-age" autocomplete="off"><br><br>
+
+
+        <!-- Why do we use label tag?
+         
+        if we want that user can select the value just by clicking on text than we use labwl tag.
+
+        how to use them?
+        -> for that we need to give same id and for value to input and label tag .
+
+        -->
+
+        <!-- Note about Radio button
+         
+        Radio button are meant to select on value only from group .
+
+        How to do group the radio button?
+        ->FOr that we need to provide name attribute 
+        
+        -->
+        <h4>Select Gender</h4>
+        <input type="radio" name="gender" value="male" id="male">
+        <label for="male">Male</label>
+        <input type="radio" name="gender" value="female" id="female">
+        <label for="female">Female</label><br><br>
+
+        <h4>Select Hobbie</h4>
+        <label for="cricket">Cricket</label>
+        <input type="checkbox" name="Hobbies" id="cricket">
+        <label for="football">FootBall</label>
+        <input type="checkbox" name="Hobbies" id="football"><br><br>
+
+        <h4>Select Stream</h4>
+        <select name="stream">
+            <option value="CSE">CSE</option>
+            <option value="ECE" selected>ECE</option>
+            <option value="BioChemical">BioChemical</option>
+            <option value="Mechnicl">Mechnicl</option>
+        </select>
+
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </fieldset>
+    </form>
+
+
+
+    <div>
+        <span>Hii</span>
+        <p>Hello</p>
+        
+    </div>
+    
+    <button class="btn">Submit</button>
+    <button class="btn big">Submit</button>
+    <button class="btn small">Submit</button>
+
+    <div>
+        <h3>Heading </h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, quibusdam fuga? Reprehenderit explicabo consectetur possimus cum corporis, fugiat adipisci laboriosam.</p>
+        <ol>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li><h3>Item 3</h3></li>
+            <li><h3>Item 4</h3></li>
+            <li><p>Item 5</p></li>
+        </ol>
+    </div>
+    
+</body>
+</html>
