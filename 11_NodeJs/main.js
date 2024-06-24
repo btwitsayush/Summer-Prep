@@ -35,6 +35,8 @@ const app =http.createServer(async (req,res)=>{
             const productPage= await fsPromises.readFile("./pages/products.html");
             // res.end(productPage);
             // break;
+
+            // why to convert our page into String? why can't we replace productText directly with product page?
             let text=productPage.toString();
 
             let productText="";
