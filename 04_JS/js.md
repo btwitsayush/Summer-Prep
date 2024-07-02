@@ -263,3 +263,29 @@ const o1={
 for(let i in o1){
     console.log(`${i}: ${o1[i]}`);
 }
+
+
+
+<!-- flat function manual code -->
+
+const arr = [1, [2, [3,5]], 4, 5, [6, 7, 8]];
+
+
+const Flat = (arr) => {
+  let res = [];
+  arr.forEach((elem) => {
+    if (Array.isArray(elem)) {
+      const d = Flat(elem);
+      res.push(...d); 
+    } else {
+      res.push(elem);
+    }
+  });
+  return res;
+}
+
+const ans = Flat(arr);
+
+ans.forEach((ce) => {
+  console.log(ce);
+});
