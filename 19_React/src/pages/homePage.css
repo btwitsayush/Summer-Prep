@@ -68,15 +68,45 @@ input{
 .homepage-body>.carousal-img{
 width: 100%;
 }
+
+
+
 .homepage-body>.products-cards-container{
-    background-color: antiquewhite;
-    margin: 0 0.75rem;
+    top: -20rem;
+    position: relative;
+    margin: 0 1rem;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 1rem;
 }
-/* .products-cards-container>.products-info-card{
-    display: inline-block;
-    background-color: #F3A847;
-    color: aqua;
-} */
+
+.products-info-card{
+    background-color: #FFFFFF;
+    /* border: 2px solid black; */
+    flex-basis: 21.25rem;
+    flex-grow: 1;
+    padding: 0.75rem 1rem;
+
+    h3{
+        font-size: 1.125rem;
+        margin-bottom: 0.375rem;
+    }
+
+    .produts-items-cards-container{
+        background-color: aqua;
+        display: flex;
+        width: 100%;
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+
+        .products-items-card{
+            width: calc(50% - 0.5rem);
+
+            img{
+                width: 100%;
+                height: 6.625rem;
+            }
+        }
+    }
+}

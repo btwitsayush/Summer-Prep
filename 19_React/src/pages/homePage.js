@@ -1,65 +1,19 @@
 // <!-- // instead of class we need to write className b/c in js class is keyword  -->
 
 import "./homePage.css";
-import { FiSearch } from "react-icons/fi";
-import { RxHamburgerMenu } from "react-icons/rx";
+import NavBar from "../../components/navBar.js";
+import CategoryBar from "../../components/categoryBar.js";
 import ProductCard from '../../components/product-info-cards/productInfoCard.js'
 
-const categories = [
-  "Today's Deals",
-  "Buy Again",
-  "Customer Service",
-  "Registry",
-  "Gift Cards",
-  "Sell",
-  "Electronics",
-];
-
-const productInfoCards=[
-  {
-    id:1,
-    title:"Lamp",
-    products:[
-      {
-        title:"Table-Lamp",
-        img:"https://www.abc.com"
-      }
-    ]
-  }
-]
-
-const HomePage = () => {
+const HomePage = (props) => {
+  const {data={},categories=[]}=props;
+  console.log(categories);
   return (
-    <header className="homepage-root-conatiner">
-      <nav className="homepage-nav">
-        <h4>Amazon.in</h4>
-        <p>
-          Address
-          <br /> LPU University
-        </p>
-        <div className="homepage-search-container">
-          <select />
-          <input />
-          <button className="homepage-search-icon">
-            <FiSearch />
-          </button>
-        </div>
+    // <header className="homepage-root-conatiner">
+    <>
+      <NavBar />
+      <CategoryBar categories={categories}/>
 
-        <h5>Profile</h5>
-        <h5>Cart</h5>
-      </nav>
-
-      <div className="homepage-category-bar">
-        <button>
-          <RxHamburgerMenu />
-          All
-        </button>
-        <div className="category-items">
-          {categories.map((elem) => {
-            return <a key={elem}>{elem}</a>;
-          })}
-        </div>
-      </div>
 
       <div className="homepage-body">
         <img
@@ -68,16 +22,16 @@ const HomePage = () => {
         />
 
         <div className="products-cards-container">
-          {productInfoCards.map((elem)=>{
+          {data.map((elem)=>{
             return <ProductCard 
-            cardId={elem.id} 
-            cardTitle={elem.title}
+            data={elem}      //passing whole array as key-value pair to use it as a props
             />
           })}
          
         </div>
       </div>
-    </header>
+      </>
+    // </header>
   );
 };
 export default HomePage;
