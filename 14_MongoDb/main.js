@@ -29,6 +29,13 @@ app.post('/products',(req,res)=>{
 })
 
 
+app.put('/products',(req,res)=>{
+        const body=req.body;
+        
+
+})
+
+
 
 app.listen(process.env.PORT,()=>{
         console.log(`server started at ${process.env.PORT}`);
