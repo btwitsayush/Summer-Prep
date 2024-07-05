@@ -1,8 +1,9 @@
 
 import { FiSearch } from "react-icons/fi";
 
-const NavBar=()=>{
+const NavBar=(props)=>{
 
+ const{getData}=props
     return(
 
     <header className="homepage-root-conatiner">
@@ -14,7 +15,8 @@ const NavBar=()=>{
       </p>
       <div className="homepage-search-container">
         <select />
-        <input />
+        <input onChange={getData}/>
+        
         <button className="homepage-search-icon">
           <FiSearch />
         </button>

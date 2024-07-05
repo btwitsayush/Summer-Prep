@@ -4,7 +4,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 const CategoryBar=(props)=>{
 
     const {categories=[]}=props;
-    console.log(categories);
+    // console.log(categories);
       
     return(
         <>

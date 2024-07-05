@@ -1,32 +1,43 @@
+import { useState } from "react";
 import NavBar from "../../components/navBar";
 import CategoryBar from "../../components/categoryBar";
 
-const SearchPage=(props)=>{
-    const {categories={}}=props;
+const SearchPage = (props) => {
 
-    const customStyle={
-        padding:"3rem",
-        textAlign:"center",
-        backgroundColor:"lightblue"
-    };
+  const { categories = {} } = props;
+  const customStyle = {
+    padding: "3rem",
+    textAlign: "center",
+    backgroundColor: "lightblue",
+  };
 
-    let searchText="";
-    console.log("intially",searchText);
+  const [products, setProducts] = useState([]);
 
-    const handleSearch=(e)=>{
-        const val=e.target.value;
-        console.log(val);
+  const getData = async (e) => {
+    const val = e.target.value;
+    if (val === "") {
+      setProducts([]);
     }
-    return(
-        <>
-        <NavBar />
-        <CategoryBar categories={categories}/>
-        <div style={customStyle}>
-            <input type="text" onChange={handleSearch} />
-        </div>
-        
-        </>
-    )
-}
+    const res = await fetch(`https://dummyjson.com/products/search?q=${val}`);
+    const data = await res.json();
+    setProducts(data.products);
+    console.log(products);
+  };
+
+  return (
+    <>
+      <NavBar getData={getData}/>
+      <CategoryBar categories={categories} />
+
+
+      <div style={customStyle}>
+        {products.map((elem) => {
+          return <p key={elem.id}>{elem.title}</p>;
+        })}
+      </div>
+      
+    </>
+  );
+};
 
 export default SearchPage;

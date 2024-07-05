@@ -109,14 +109,14 @@ const productInfoCards = [
      ]
    }
  ];
- console.log(categories);
+//  console.log(categories);
 // We write code in form of component b/c it helps us to write logic inside the code which element doen't allow us
 const App=()=>{
    return(
 
     <>
-   <HomePage  data={productInfoCards} categories={categories}/>
-   {/* <SearchPage categories={categories} /> */}
+   {/* <HomePage  data={productInfoCards} categories={categories}/> */}
+   <SearchPage categories={categories} />
     </>
    )
 }
