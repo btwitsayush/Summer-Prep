@@ -1,7 +1,10 @@
 import ReactDOM from "react-dom/client";
+import { useState } from "react";
+import {createBrowserRouter,RouterProvider} from "react-router-dom";
 // import './globalStyle.css';
 import HomePage from './src/pages/homePage.js'
 import SearchPage from "./src/pages/amazonSearchPage.js";
+import ProductInfo from "./src/pages/productInfo.js";
 const parent=document.getElementById('root');
 
 // ye jsDOM ke cpy create krta hai React DOM ke pass
@@ -110,13 +113,34 @@ const productInfoCards = [
    }
  ];
 //  console.log(categories);
+
+
+
+
 // We write code in form of component b/c it helps us to write logic inside the code which element doen't allow us
 const App=()=>{
+
+  const [search, setSearch] = useState("");
+
+  const router=createBrowserRouter([
+    {
+      path:'/',
+      element:<HomePage data={productInfoCards}  categories={categories} setSearch={setSearch} search={search} />
+    },
+    {
+      path:'/search',
+      element:<SearchPage categories={categories} setSearch={setSearch} search={search}/>
+    },
+    {
+      path:'/search/:id',
+      element:<ProductInfo/>
+    }
+  ])
+
    return(
 
     <>
-   {/* <HomePage  data={productInfoCards} categories={categories}/> */}
-   <SearchPage categories={categories} />
+    <RouterProvider router={router} />
     </>
    )
 }

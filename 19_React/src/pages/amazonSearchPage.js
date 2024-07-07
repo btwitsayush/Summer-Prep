@@ -1,10 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import NavBar from "../../components/navBar";
 import CategoryBar from "../../components/categoryBar";
-
 const SearchPage = (props) => {
 
-  const { categories = {} } = props;
+  const { categories = {} ,setSearch,search} = props;
   const customStyle = {
     padding: "3rem",
     textAlign: "center",
@@ -13,20 +12,26 @@ const SearchPage = (props) => {
 
   const [products, setProducts] = useState([]);
 
-  const getData = async (e) => {
-    const val = e.target.value;
-    if (val === "") {
-      setProducts([]);
-    }
-    const res = await fetch(`https://dummyjson.com/products/search?q=${val}`);
+  // console.log("search value is",search);
+
+  const getData = async () => {
+
+    const res = await fetch(`https://dummyjson.com/products/search?q=${search}`);
     const data = await res.json();
     setProducts(data.products);
     console.log(products);
+    if(search ==="") {
+      setProducts([]);
+    }
   };
+
+ useEffect(()=>{
+  getData()
+ },[search])
 
   return (
     <>
-      <NavBar getData={getData}/>
+      <NavBar setSearch={setSearch} search={search}/>
       <CategoryBar categories={categories} />
 
 

@@ -3,15 +3,21 @@
 import "./homePage.css";
 import NavBar from "../../components/navBar.js";
 import CategoryBar from "../../components/categoryBar.js";
-import ProductCard from '../../components/product-info-cards/productInfoCard.js'
+import ProductCard from '../../components/product-info-cards/productInfoCard.js';
+import { useNavigate } from "react-router-dom";
 
 const HomePage = (props) => {
-  const {data={},categories=[]}=props;
-  console.log(categories);
+  const {data={},categories=[],search,setSearch}=props;
+
+  const navigate=useNavigate();
+  
+  const openSerachPage=()=>{
+    navigate('/search')
+  }
   return (
     // <header className="homepage-root-conatiner">
     <>
-      <NavBar />
+      <NavBar setSearch={setSearch} openSerachPage={openSerachPage} search={search} />
       <CategoryBar categories={categories}/>
 
 
