@@ -9,9 +9,9 @@ const useGetProducts=(search="")=>{
         const res = await fetch(`https://dummyjson.com/products/search?q=${search}`);
         const data = await res.json();
         setProducts(data.products);
-        if (search === "") {
-          setProducts([]);
-        }
+        // if (search === "") {
+        //   setProducts([]);
+        // }
       };
       useEffect(() => {
         getData();
