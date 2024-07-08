@@ -1,10 +1,9 @@
 
 import { FiSearch } from "react-icons/fi";
-
 const NavBar=(props)=>{
 
  const{search,setSearch,openSerachPage}=props
- console.log(search);
+//  console.log(search);
 
 
     return(
@@ -19,8 +18,8 @@ const NavBar=(props)=>{
       <div className="homepage-search-container">
         <select />
         <input value={search}
-        onChange={(event)=>{
-          setSearch(event.target.value)
+        onChange={(event)=>{   
+          setSearch(event.target.value);
         }}/>
         
         <button className="homepage-search-icon" onClick={openSerachPage}>

@@ -6,13 +6,14 @@ const productInfoCards=(props)=>{
         // console.log(data.cardTitle)
         <div className="products-info-card">
             <h3>{data.title}</h3>
-            <div className="produts-items-cards-container">
 
-           { data.products.map((elem)=>{
+            <div className="produts-items-cards-container" >
+
+           { data.products.map((elem,key)=>{
             return(
-                <div className="products-items-card">
-                    <img src={elem.img} />
-                    <h5>{elem.title}</h5>
+                <div className="products-items-card" key={elem.id}>
+                    <img src={elem.img} key={key}/>
+                    <h5 key={elem.title}>{elem.title}</h5>
                 </div> 
             )
            })}

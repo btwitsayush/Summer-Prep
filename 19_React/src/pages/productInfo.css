@@ -1,0 +1,153 @@
+body {
+
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.product-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 2rem;
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+    transition: transform 0.3s;
+}
+
+.product-container:hover {
+    transform: scale(1.02);
+}
+
+.product-image {
+    width: 40%;
+    padding: 1rem;
+    border-right: 1px solid #ccc;
+}
+
+.product-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.product-image img:hover {
+    transform: scale(1.05);
+}
+
+.product-details {
+    width: 55%;
+    padding: 1rem;
+}
+
+.product-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.product-description {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.product-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #27ae60;
+    margin-bottom: 1rem;
+}
+
+.product-rating {
+    font-size: 1rem;
+    color: #f39c12;
+    margin-bottom: 1rem;
+}
+
+.product-warranty {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 1rem;
+}
+
+.product-availability {
+    font-size: 1rem;
+    color: #3498db;
+    margin-bottom: 1rem;
+}
+
+.product-stocks {
+    font-size: 1rem;
+    color: #e74c3c;
+    margin-bottom: 1rem;
+}
+
+.buy-now-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #27ae60;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.buy-now-button:hover {
+    background-color: #219150;
+}
+
+.reviews-container {
+    margin: 2rem;
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+}
+
+.review {
+    border-bottom: 1px solid #ccc;
+    padding: 1rem 0;
+    transition: background-color 0.3s;
+}
+
+.review:last-child {
+    border-bottom: none;
+}
+
+.review:hover {
+    background-color: #f9f9f9;
+}
+
+.review-rating {
+    font-size: 1rem;
+    color: #f39c12;
+}
+
+.review-comment {
+    font-size: 1rem;
+    color: #333;
+    margin: 0.5rem 0;
+}
+
+.review-date {
+    font-size: 0.8rem;
+    color: #999;
+}
+
+.review-author {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+}

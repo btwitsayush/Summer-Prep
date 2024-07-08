@@ -1,12 +1,14 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-.homepage-root-conatiner{
+
+.homepage-root-conatiner {
 
 }
-.homepage-nav{
+
+.homepage-nav {
     background-color: #131921;
     color: #FFFFFF;
     padding: 10px;
@@ -14,36 +16,41 @@
     align-items: center;
     gap: 1rem;
 }
-.homepage-nav>h4{
+
+.homepage-nav > h4 {
     width: 4.75rem;
 }
-.homepage-nav>p{
+
+.homepage-nav > p {
     width: 5.5rem;
     font-size: 0.75rem;
 }
-.homepage-search-container{
+
+.homepage-search-container {
     flex-grow: 1;
-height: 1.875rem;
-/* background-color: red; */
-display: flex;
-input{
+    height: 1.875rem;
+    display: flex;
+}
+
+.homepage-search-container input {
     flex-grow: 1;
 }
-}
-/* #F3A847 */
-.homepage-search-icon{
-    background-color:#F3A847 ;
+
+.homepage-search-icon {
+    background-color: #F3A847;
     border: none;
     width: 1.5rem;
 }
-.homepage-category-bar{
+
+.homepage-category-bar {
     background-color: #222F3E;
     display: flex;
     align-items: center;
     height: 2.5rem;
     padding: 0.625rem 1rem;
 }
-.homepage-category-bar>button{
+
+.homepage-category-bar > button {
     background-color: transparent;
     display: flex;
     align-items: center;
@@ -53,60 +60,103 @@ input{
     border: none;
     cursor: pointer;
 }
-.homepage-category-bar>.category-items{
+
+.homepage-category-bar > .category-items {
     display: flex;
     align-items: center;
     gap: 1rem;
     padding: 0 0.75rem;
 }
-.category-items>a{
+
+.category-items > a {
     font-size: 0.9rem;
     color: #FFFFFF;
     cursor: pointer;
 }
-/* home page body */
-.homepage-body>.carousal-img{
-width: 100%;
+
+/* Home page body */
+.homepage-body > .carousal-img {
+    width: 100%;
 }
 
-
-
-.homepage-body>.products-cards-container{
+.homepage-body > .products-cards-container {
     top: -20rem;
     position: relative;
     margin: 0 1rem;
     display: flex;
     align-items: flex-start;
     gap: 1rem;
+    flex-wrap: wrap;
 }
 
-.products-info-card{
+.products-info-card {
     background-color: #FFFFFF;
-    /* border: 2px solid black; */
     flex-basis: 21.25rem;
     flex-grow: 1;
     padding: 0.75rem 1rem;
+    box-sizing: border-box;
+    min-height: 15rem;
+    background-color: #F3A847;
 
-    h3{
+    /* Main box hover effect */
+    &:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transform: translateY(-5px);
+        transition: all 0.3s ease;
+    }
+
+    h3 {
         font-size: 1.125rem;
         margin-bottom: 0.375rem;
     }
 
-    .produts-items-cards-container{
-        background-color: aqua;
-        display: flex;
-        width: 100%;
-        display: flex;
-        gap: 1rem;
-        flex-wrap: wrap;
-
-        .products-items-card{
-            width: calc(50% - 0.5rem);
-
-            img{
-                width: 100%;
-                height: 6.625rem;
-            }
-        }
+    .produts-items-cards-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+        gap: 1rem; /* Space between items */
+        background-color: transparent;
+        padding: 1rem 0;
     }
+}
+/* Container for each product item card */
+.products-items-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #e5e5e5;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    width: 10rem; /* Adjust width as needed */
+    height: 12rem; /* Adjust height as needed */
+    overflow: hidden; /* Prevent overflow of content */
+}
+
+/* Image styling to fit within the defined container size */
+.products-items-card img {
+    width: 100%;
+    height: 8rem; /* Fixed height */
+    object-fit: cover; /* Ensures the image covers the area */
+    margin-bottom: 0.5rem;
+    /* Add border radius for better aesthetics if needed */
+    border-radius: 0.25rem;
+}
+
+/* Heading styling to ensure proper alignment and spacing */
+.products-items-card h5 {
+    font-size: 1rem;
+    text-align: center;
+    margin: 0.5rem 0 0; /* Margin top and bottom */
+    overflow: hidden; /* Ensure text does not overflow */
+    text-overflow: ellipsis; /* Add ellipsis for overflow text */
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+
+
+/* Fixing the size of the boxes and ensuring wrapping */
+.products-cards-container > .products-info-card {
+    width: 22rem; /* Fixed width */
+    height: 25rem; /* Fixed height */
+    margin-bottom: 1rem; /* Margin to ensure wrapping */
+    overflow: hidden; /* Prevent content overflow */
 }
