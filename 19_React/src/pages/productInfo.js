@@ -2,6 +2,8 @@ import { useParams,useNavigate} from "react-router-dom";
 import NavBar from "../../components/navBar";
 import './productInfo.css';
 import useGetProductsById from "../hooks/useGetProductById";
+import { useContext } from "react";
+import AppContext from "../context/appContext";
 // import useGetProducts from "../hooks/useGetProducts";
 
 const ProductInfo = () => {
@@ -9,15 +11,16 @@ const ProductInfo = () => {
 
   const params = useParams();
   const { id } = params;
-  console.log(id);
+
 
   const productInfoByID= useGetProductsById(id);
-  console.log(productInfoByID);
+
 
   const navigate=useNavigate();
 
 
 //   console.log(typeof(id));
+const {addToCart}=useContext(AppContext);
 
 const openSerachPage=()=>{
   navigate('/search')
@@ -38,7 +41,7 @@ const openSerachPage=()=>{
           <p className="product-warranty">Warranty: {productInfoByID.warrantyInformation}</p>
           <p className="product-availability">Availability: {productInfoByID.availabilityStatus}</p>
           <p className="product-stocks">Items Left: {productInfoByID.minimumOrderQuantity}</p>
-          <button className="buy-now-button">Buy Now</button>
+          <button className="buy-now-button" onClick={()=>{ addToCart(productInfoByID);}}>Buy Now</button>
         </div>
       </div>
       <div className="reviews-container">

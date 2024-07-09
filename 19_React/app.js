@@ -5,6 +5,7 @@ import {createBrowserRouter,RouterProvider} from "react-router-dom";
 import HomePage from './src/pages/homePage.js'
 import SearchPage from "./src/pages/amazonSearchPage.js";
 import ProductInfo from "./src/pages/productInfo.js";
+import Cart from "./src/pages/cart.js";
 import AppContext from "./src/context/appContext.js";
 const parent=document.getElementById('root');
 
@@ -374,6 +375,36 @@ const App=()=>{
 
 
   const [search, setSearch] = useState("");
+  const[cart,setCart]=useState([]);
+
+  const addToCart=(elem)=>{
+
+    const isPresent=cart.findIndex((ci)=>ci.id===elem.id);
+    if(isPresent===-1){
+
+      const newCart=[...cart];
+      newCart.push({
+        title:elem.title,
+        id:elem.id,
+        price:elem.price,
+        count:1
+      });
+      setCart(newCart);
+    }
+    else{
+      const newCart=cart.map((cardItem)=>{
+        if(cardItem.id===elem.id){
+          const newCartItem={...cardItem}
+          newCartItem.count+=1;
+          return newCartItem;
+        }
+        else{
+          return cardItem;
+        }
+      })
+      setCart(newCart)
+    }
+  }
 
   const router=createBrowserRouter([
     {
@@ -385,18 +416,27 @@ const App=()=>{
       element:<SearchPage />
     },
     {
+      path:'/cart',
+      element:<Cart />
+    },
+    {
       path:'/search/:id',
       element:<ProductInfo />
     }
   ])
 
+
+
   const contextValues = {
     search,
     setSearch,
     categories,
-    data: productInfoCards
+    data: productInfoCards,
+    cart,
+    addToCart
   };
   
+  console.log("cart=",cart);
 
    return(
 

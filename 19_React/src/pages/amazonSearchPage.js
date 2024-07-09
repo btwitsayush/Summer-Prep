@@ -3,16 +3,20 @@ import NavBar from "../../components/navBar";
 import CategoryBar from "../../components/categoryBar";
 import "./amazonSerachPage.css";
 import useGetProducts from "../hooks/useGetProducts";
+import { useContext } from "react";
+import AppContext from "../context/appContext";
 
 
 const SearchPage = () => {
 
-  console.log("SearchPage Rendering***********************");
+  // console.log("SearchPage Rendering***********************");
   
  
   
   const navigate = useNavigate(); 
   const products=useGetProducts();
+
+
 
 
 
@@ -31,7 +35,7 @@ const SearchPage = () => {
             <p className="card-price">INR:{elem.price * 83}</p>
             <button className="card-button" onClick={() => {
               navigate(`/search/${elem.id}`,{ state: { data: products} }); // Correct path format and usage of navigate
-              console.log(elem);
+              // console.log(elem);
               <NavBar/>
             }}>See More</button>
           </div>

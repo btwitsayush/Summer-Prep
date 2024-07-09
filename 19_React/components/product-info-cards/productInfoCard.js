@@ -6,8 +6,7 @@ const productInfoCards=(props)=>{
     // giving a default value to data incase if there was nothing in array 
     const{data={}}=props;
 
-    const contextData=useContext(AppContext)
-    console.log(contextData);
+    // const contextData=useContext(AppContext)
 
     return(
         // console.log(data.cardTitle)

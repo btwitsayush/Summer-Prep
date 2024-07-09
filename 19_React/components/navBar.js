@@ -2,6 +2,7 @@
 import { useContext } from "react";
 import { FiSearch } from "react-icons/fi";
 import AppContext from "../src/context/appContext";
+import { Link } from "react-router-dom";
 const NavBar=({openSerachPage})=>{
 
  const{search,setSearch}=useContext(AppContext)
@@ -30,7 +31,7 @@ const NavBar=({openSerachPage})=>{
       </div>
 
       <h5>Profile</h5>
-      <h5>Cart</h5>
+      <Link to="/cart">Cart</Link>
     </nav>
     </header>
     )
