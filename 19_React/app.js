@@ -5,6 +5,7 @@ import {createBrowserRouter,RouterProvider} from "react-router-dom";
 import HomePage from './src/pages/homePage.js'
 import SearchPage from "./src/pages/amazonSearchPage.js";
 import ProductInfo from "./src/pages/productInfo.js";
+import AppContext from "./src/context/appContext.js";
 const parent=document.getElementById('root');
 
 // ye jsDOM ke cpy create krta hai React DOM ke pass
@@ -371,27 +372,38 @@ const categories = [
 // We write code in form of component b/c it helps us to write logic inside the code which element doen't allow us
 const App=()=>{
 
+
   const [search, setSearch] = useState("");
 
   const router=createBrowserRouter([
     {
       path:'/',
-      element:<HomePage data={productInfoCards}  categories={categories} setSearch={setSearch} search={search} />
+      element:<HomePage />
     },
     {
       path:'/search',
-      element:<SearchPage categories={categories} setSearch={setSearch} search={search}/>
+      element:<SearchPage />
     },
     {
       path:'/search/:id',
-      element:<ProductInfo setSearch={setSearch} search={search} />
+      element:<ProductInfo />
     }
   ])
+
+  const contextValues = {
+    search,
+    setSearch,
+    categories,
+    data: productInfoCards
+  };
+  
 
    return(
 
     <>
+    <AppContext.Provider value={contextValues}>
     <RouterProvider router={router} />
+    </AppContext.Provider>
     </>
    )
 }

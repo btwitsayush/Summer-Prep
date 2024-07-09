@@ -1,26 +1,26 @@
-import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate from react-router-dom
 import NavBar from "../../components/navBar";
 import CategoryBar from "../../components/categoryBar";
 import "./amazonSerachPage.css";
 import useGetProducts from "../hooks/useGetProducts";
 
-const SearchPage = (props) => {
+
+const SearchPage = () => {
 
   console.log("SearchPage Rendering***********************");
-  const { categories = {}, setSearch, search } = props;
+  
  
   
   const navigate = useNavigate(); 
-  const products=useGetProducts(search);
+  const products=useGetProducts();
 
 
 
 
   return (
     <>
-      <NavBar setSearch={setSearch} search={search} />
-      <CategoryBar categories={categories} />
+      <NavBar  />
+      <CategoryBar />
 
       <div className="card-container">
         {products.map((elem) => (

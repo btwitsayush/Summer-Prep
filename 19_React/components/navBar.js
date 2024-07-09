@@ -1,8 +1,10 @@
 
+import { useContext } from "react";
 import { FiSearch } from "react-icons/fi";
-const NavBar=(props)=>{
+import AppContext from "../src/context/appContext";
+const NavBar=({openSerachPage})=>{
 
- const{search,setSearch,openSerachPage}=props
+ const{search,setSearch}=useContext(AppContext)
 //  console.log(search);
 
 

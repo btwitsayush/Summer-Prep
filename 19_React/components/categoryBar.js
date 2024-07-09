@@ -1,9 +1,11 @@
+import { useContext } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
+import AppContext from "../src/context/appContext";
 
 
-const CategoryBar=(props)=>{
+const CategoryBar=()=>{
 
-    const {categories=[]}=props;
+    const {categories=[]}=useContext(AppContext);
     // console.log(categories);
       
     return(

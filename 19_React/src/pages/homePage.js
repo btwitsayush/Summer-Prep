@@ -5,24 +5,24 @@ import NavBar from "../../components/navBar.js";
 import CategoryBar from "../../components/categoryBar.js";
 import ProductCard from '../../components/product-info-cards/productInfoCard.js';
 import { useNavigate } from "react-router-dom";
-import useGetProducts from "../hooks/useGetProducts.js";
+import { useContext } from "react";
+import AppContext from "../context/appContext.js";
 
-const HomePage = (props) => {
-  const {data={},categories=[],search,setSearch}=props;
+const HomePage = () => {
+  const {data={}}=useContext(AppContext);
 
   const navigate=useNavigate();
   
   const openSerachPage=()=>{
     navigate('/search')
   }
-  // const data1=useGetProducts();
-  // console.log("data=",data1);
+ 
   
   return (
     // <header className="homepage-root-conatiner">
     <>
-      <NavBar setSearch={setSearch} openSerachPage={openSerachPage} search={search} />
-      <CategoryBar categories={categories}/>
+      <NavBar openSerachPage={openSerachPage} />
+      <CategoryBar />
 
 
       <div className="homepage-body">
