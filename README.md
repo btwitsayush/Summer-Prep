@@ -13,6 +13,54 @@ The primary purpose of this repository is to:
 - Provide a structured learning path for anyone interested in web development.
 - Encourage collaboration and contributions from others who are learning similar technologies.
 
+## Technologies Covered
+
+- **HTML**
+  - Basic structure and elements
+  - Attributes and forms
+  - Semantic HTML
+  - Multimedia elements (audio, video)
+  - Tables and lists
+
+- **CSS**
+  - Styling and selectors
+  - Box model and positioning
+  - Flexbox and Grid layouts
+  - Responsive design and media queries
+  - CSS animations and transitions
+  - Preprocessors (e.g., SASS)
+
+- **JavaScript**
+  - Basics: variables, data types, and operators
+  - Control structures: loops and conditionals
+  - Functions and scope
+  - DOM manipulation and events
+  - ES6+ features: arrow functions, promises, async/await
+  - JSON and AJAX for data handling
+
+- **MERN Stack**
+  - **MongoDB**
+    - NoSQL database concepts
+    - CRUD operations
+    - Aggregation framework
+    - Indexing and performance optimization
+  - **Express.js**
+    - Setting up a server
+    - Middleware and routing
+    - RESTful API development
+    - Error handling
+  - **React**
+    - Component-based architecture
+    - JSX syntax
+    - State and props management
+    - Lifecycle methods and hooks
+    - Context API for state management
+  - **Node.js**
+    - Server-side JavaScript execution
+    - File system and modules
+    - Asynchronous programming with callbacks and promises
+    - Building RESTful services
+
 ## Learning Goals
 
 Through this repository, I aimed to achieve the following learning goals:
@@ -22,6 +70,7 @@ Through this repository, I aimed to achieve the following learning goals:
 - Master the MERN stack to create full-stack applications.
 - Understand the principles of RESTful API design and implementation.
 - Enhance problem-solving skills through practical coding exercises.
+
 
 
 ---
